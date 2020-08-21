@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
+    int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,24 +24,50 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView = findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
-    public void addThree(View view) {
+    public void addThreeTeamA(View view) {
         scoreTeamA += 3;
         displayForTeamA(scoreTeamA);
     }
-    public void addTwo(View view) {
+    public void addTwoTeamA(View view) {
         scoreTeamA += 2;
         displayForTeamA(scoreTeamA);
     }
-    public void addOne(View view) {
-        scoreTeamA += 1;
+    public void addOneTeamA(View view) {
+        scoreTeamA++;
         displayForTeamA(scoreTeamA);
     }
-    public void decrement(View view) {
-        scoreTeamA -= 1;
+    public void decrementTeamA(View view) {
+        scoreTeamA--;
         displayForTeamA(scoreTeamA);
     }
-    public void reset(View view) {
+
+
+    public void displayForTeamB(int score) {
+        TextView scoreView = findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+    public void addThreeTeamB(View view) {
+        scoreTeamB += 3;
+        displayForTeamB(scoreTeamB);
+    }
+    public void addTwoTeamB(View view) {
+        scoreTeamB += 2;
+        displayForTeamB(scoreTeamB);
+    }
+    public void addOneTeamB(View view) {
+        scoreTeamB++;
+        displayForTeamB(scoreTeamB);
+    }
+    public void decrementTeamB(View view) {
+        scoreTeamB--;
+        displayForTeamB(scoreTeamB);
+    }
+
+
+    public void resetTeam(View view) {
         scoreTeamA = 0;
+        scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
     }
 }
